@@ -3,7 +3,7 @@
 
 #include "spisok.h"
 
-#define SIZE_TEST_FILE 700
+#define SIZE_TEST_FILE 370105
 
 str_spisok* Init_Hash_Table();
 

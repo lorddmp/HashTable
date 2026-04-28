@@ -20,6 +20,8 @@ int main()
 
     Fill_Hash_Table(mas_list, massive);
 
+    Stat_List_Size(mas_list);
+
     for (int i = 0; i < SIZE_TEST_FILE; i++)
     {
         if (Find_Word(mas_list, mas_test_words[i]) == 0)
