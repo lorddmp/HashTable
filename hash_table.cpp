@@ -9,6 +9,8 @@
 #define INPUT_FILE "words_source.txt"
 #define INPUT_TEST_FILE "words_tests.txt"
 
+extern "C" int my_strcmp(char* str1, char* str2);
+
 str_spisok* Init_Hash_Table()
 {
     str_spisok* mas_list = (str_spisok*)calloc(MASSIVE_SIZE, sizeof(str_spisok));
@@ -58,7 +60,7 @@ char** Read_Test_Words()
 
     for (int i = 0; i < SIZE_TEST_FILE; i++, massive++)
     {
-        mas_words[i] = (char*)calloc(20, sizeof(char));
+        mas_words[i] = (char*)calloc(32, sizeof(char));
         for (int j = 0; (j < 20) && (*massive != '\n'); j++, massive++)
             mas_words[i][j] = *massive;
     }
@@ -91,7 +93,7 @@ int Find_Word(str_spisok* mas_list, char* word)
     long long index_mas = Hash_crc32(word) % MASSIVE_SIZE;
 
     for (int i = 1; i <= mas_list[index_mas].size; i++)
-        if (strcmp(mas_list[index_mas].data[i], word) == 0)
+        if (my_strcmp(mas_list[index_mas].data[i], word) == 0)
             return i;
 
     return 0;
@@ -102,7 +104,7 @@ void Fill_Hash_Table(str_spisok* mas_list, char* massive)
     Skip_non_letters(&massive);
     while (*massive != 0)
     {
-        char* word = (char*)calloc(20, sizeof(char));
+        char* word = (char*)calloc(32, sizeof(char));
         for (int i = 0; isalpha(*massive); i++, massive++)
             word[i] = *massive;
 

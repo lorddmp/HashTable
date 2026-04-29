@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE_DATA 40000
+#define SIZE_DATA 100
 #define MASSIVE_SIZE 4000
 
 struct str_spisok{
