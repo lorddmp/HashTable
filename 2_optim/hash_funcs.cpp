@@ -60,3 +60,5 @@ long long Hash_crc32(char* word)
 
     return crc;
 }
+
+//gui kcachegrind

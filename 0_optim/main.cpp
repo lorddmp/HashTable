@@ -23,8 +23,6 @@ int main()
 
     Fill_Hash_Table(mas_list, massive);
 
-    Stat_List_Size(mas_list);
-
     for (int i = 0; i < SIZE_TEST_FILE; i++)
     {
         int lenlen = (int)strlen(mas_test_words[i]);

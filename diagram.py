@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 
 for i in range (1,7):
     values = []
-    with open(f'list_sizes{i}.txt', 'r') as f:
+    with open(f'List_Sizes/list_sizes{i}.txt', 'r') as f:
         for line in f:
             values.append(float(line.strip()))
 
