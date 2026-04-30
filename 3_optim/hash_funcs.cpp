@@ -56,7 +56,15 @@ long long Hash_crc32(char* word)
     }
 
     for (int i = 0; i < count_cyc_2; word ++, i++)
-        crc = _mm_crc32_u8(crc, (unsigned char)*word);
+    {
+        unsigned char ch = *word;
+        __asm__ volatile 
+        (
+            "crc32b %1, %0"
+            : "+r"(crc)
+            : "r"(ch)
+        );
+    }
 
     return crc;
 }

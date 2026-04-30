@@ -22,14 +22,16 @@ int main()
     int max_len = 0;
 
     Fill_Hash_Table(mas_list, massive);
-
-    for (int i = 0; i < SIZE_TEST_FILE; i++)
+    for (int j = 0; j < 10; j++)
     {
-        int lenlen = (int)strlen(mas_test_words[i]);
-        if (lenlen > max_len)
-            max_len = lenlen;
-        if (Find_Word(mas_list, mas_test_words[i]) == 0)
-            counter++;
+        for (int i = 0; i < SIZE_TEST_FILE; i++)
+        {
+            int lenlen = (int)strlen(mas_test_words[i]);
+            if (lenlen > max_len)
+                max_len = lenlen;
+            if (Find_Word(mas_list, mas_test_words[i]) == 0)
+                counter++;
+        }
     }
 
     printf("maxlen = %d\n", max_len);
